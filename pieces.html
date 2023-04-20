@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chess</title>
+    <style>
+        /* General CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body style="height: 100vh; display: flex; flex-flow: column; background: #232323; color: #fff;">
+<header style="background: #353535; padding: 1rem 1.2rem;">
+    <section style="width: 100%; max-width: 1277px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="font-family: YuGothic, sans-serif">
+            <a style="font-family: inherit" href="./">Chess</a>
+        </h1>
+        <nav>
+            <ul style="display: flex; justify-content: end; align-items: center; gap: 1.2rem; list-style: none">
+                <li><a href="./">Home</a></li>
+                <li><a href="./pieces.html">Meet the pieces</a></li>
+                <li><a href="./objectives.html">Objectives</a></li>
+                <li style="font-weight: 700;"><a href="./references.html">References</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+<main style="width: calc(100% - 30px); max-width: 1277px; margin: 0 auto; padding: 3rem 0 1.5rem;">
+    <h1 style="font-family: YuGothic, sans-serif">The Pieces</h1>
+    <p style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.5rem">
+        See the roster of pieces in chess and learn about their unique abilities.
+    </p>
+    <hr style="width: calc(100% - 50px); max-width: 990px; margin: 3rem auto; padding: 1px; background: #6c592b; border: 1px solid #6c592b; border-radius: 50000px"/>
+    <section style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; gap: 1.2rem; margin-bottom: 2rem;">
+        <div style="flex: 1;">
+            <h2 style="font-family: YuGothic, sans-serif">The King</h2>
+            <p style="line-height: 1.5;">
+                The king is the most important piece in the game. It is the only piece that can move to any square on the board that is not under attack by an enemy piece. The king can move one square in any direction, so long as that square is not attacked by an enemy piece. The king also has a special move called castling.
+            </p>
+            <br>
+            <p style="line-height: 1.5">In a game, you can only have 1 king on the board.</p>
+        </div>
+        <figure style="width: 100%; max-width: 240px; margin: 0 auto; flex: 1">
+            <img style="width: 100%; height: 100%; object-fit: fill; object-position: center; border-radius: 0.7rem" src="assets/img/pieces/king.png" alt="The King's piece.">
+            <figcaption style="font-size: 0.8rem; text-align: center; margin-top: 0.5rem">The King.</figcaption>
+        </figure>
+    </section>
+    <section style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; gap: 1.2rem; margin-bottom: 2rem;">
+        <div style="flex: 1;">
+            <h2 style="font-family: YuGothic, sans-serif">The Pawn</h2>
+            <p style="line-height: 1.5;">
+                The pawn is (arguably) the weakest piece in the game. It can only move forward one square at a time, except for its first move, when it can move forward two squares. Pawns are the only pieces that cannot move backwards. They are also the only pieces that can capture an enemy piece on a diagonal square in front of them. However, don't be fooled that easily as pawns are also the only pieces that can promote to another piece when they reach the other side of the board. Which can become handy if you're ever in a pinch.
+            </p>
+            <br>
+            <p style="line-height: 1.5">In a game, you can only have 8 pawns on the board.</p>
+        </div>
+        <figure style="width: 100%; max-width: 240px; margin: 0 auto; flex: 1">
+            <img style="width: 100%; height: 100%; object-fit: fill; object-position: center; border-radius: 0.7rem" src="assets/img/pieces/pawn.png" alt="The Pawn's piece.">
+            <figcaption style="font-size: 0.8rem; text-align: center; margin-top: 0.5rem">The Pawn.</figcaption>
+        </figure>
+    </section>
+    <section style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; gap: 1.2rem; margin-bottom: 2rem;">
+        <div style="flex: 1;">
+            <h2 style="font-family: YuGothic, sans-serif">The Rook</h2>
+            <p style="line-height: 1.5;">
+                The rook is (arguably, again) the second most powerful piece in the game. It can move any number of squares vertically or horizontally, so long as that square is not attacked by an enemy piece. The rook also has a special move called castling.
+            </p>
+            <br>
+            <p style="line-height: 1.5">In a game, you can only have 2 rooks on the board.</p>
+        </div>
+        <figure style="width: 100%; max-width: 240px; margin: 0 auto; flex: 1">
+            <img style="width: 100%; height: 100%; object-fit: fill; object-position: center; border-radius: 0.7rem" src="assets/img/pieces/rook.png" alt="The Rook's piece.">
+            <figcaption style="font-size: 0.8rem; text-align: center; margin-top: 0.5rem">The Rook.</figcaption>
+        </figure>
+    </section>
+    <section style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; gap: 1.2rem; margin-bottom: 2rem;">
+        <div style="flex: 1;">
+            <h2 style="font-family: YuGothic, sans-serif">The Knight</h2>
+            <p style="line-height: 1.5;">
+                The knight is the most unique piece in the game. It can move to any square that is two squares vertically and one square horizontally, or two squares horizontally and one square vertically, so long as that square is not attacked by an enemy piece.
+            </p>
+            <br>
+            <p style="line-height: 1.5">In a game, you can only have 2 knights on the board.</p>
+        </div>
+        <figure style="width: 100%; max-width: 240px; margin: 0 auto; flex: 1">
+            <img style="width: 100%; height: 100%; object-fit: fill; object-position: center; border-radius: 0.7rem" src="assets/img/pieces/knight.png" alt="The Knight's piece.">
+            <figcaption style="font-size: 0.8rem; text-align: center; margin-top: 0.5rem">The Knight.</figcaption>
+        </figure>
+    </section>
+    <section style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; gap: 1.2rem; margin-bottom: 2rem;">
+        <div style="flex: 1;">
+            <h2 style="font-family: YuGothic, sans-serif">The Bishop</h2>
+            <p style="line-height: 1.5;">
+                The bishop is the third most powerful piece in the game. It can move any number of squares diagonally, so long as that square is not attacked by an enemy piece.
+            </p>
+            <br>
+            <p style="line-height: 1.5">In a game, you can only have 2 bishops on the board.</p>
+        </div>
+        <figure style="width: 100%; max-width: 240px; margin: 0 auto; flex: 1">
+            <img style="width: 100%; height: 100%; object-fit: fill; object-position: center; border-radius: 0.7rem" src="assets/img/pieces/bishop.png" alt="The Bishop's piece.">
+            <figcaption style="font-size: 0.8rem; text-align: center; margin-top: 0.5rem">The Bishop.</figcaption>
+        </figure>
+    </section>
+    <section style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; gap: 1.2rem; margin-bottom: 2rem;">
+        <div style="flex: 1;">
+            <h2 style="font-family: YuGothic, sans-serif">The Queen</h2>
+            <p style="line-height: 1.5;">
+                The queen is the most powerful piece in the game. It can move any number of squares vertically, horizontally, or diagonally, so long as that square is not attacked by an enemy piece.
+            </p>
+            <br>
+            <p style="line-height: 1.5">In a game, you can only have 1 queen on the board.</p>
+        </div>
+        <figure style="width: 100%; max-width: 240px; margin: 0 auto; flex: 1">
+            <img style="width: 100%; height: 100%; object-fit: fill; object-position: center; border-radius: 0.7rem" src="assets/img/pieces/queen.png" alt="The Queen's piece.">
+            <figcaption style="font-size: 0.8rem; text-align: center; margin-top: 0.5rem">The Queen.</figcaption>
+        </figure>
+    </section>
+    <section style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; gap: 1.2rem; margin-bottom: 2rem;">
+        <div style="flex: 1;">
+            <h2 style="font-family: YuGothic, sans-serif">KEEP IN MIND!</h2>
+            <p style="line-height: 1.5;">
+                While I ranked the pieces here according to their potential power on a board. It's ultimately up to you, the player on how you'll use these pieces to your advantage. Sometimes you might end up in a position where the pieces are all weak, and we don't want that. So in the next section, we'll talk about what are our objectives in this game.
+            </p>
+            <div style="display: flex; flex-flow: row nowrap; justify-content: flex-end; gap: 0.7rem; margin-top: 5rem;">
+                <a style="background: #f5dba3; color: #261f0d; box-shadow: 0 3px #6c592b; font-size: 1.5rem; font-weight: 700; font-family: YuGothic, sans-serif; border-radius: 0.5rem; padding: 0.7rem 1.2rem;" href="./objectives.html">Objectives in the game</a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer style="background: #353535; padding: 1rem 1.2rem; text-align: center; margin-top: auto">
+    <p style="font-size: 0.8rem;">&copy; 2023 - With &hearts; by <a style="color: #f5dba3" href="https://matteusan.com">Matthew Hernandez</a></p>
+</footer>
+</body>
+</html>
