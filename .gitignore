@@ -1,0 +1,7 @@
+# compiled
+*.zip
+*.pdf
+
+# workstations
+.idea
+.vscode
