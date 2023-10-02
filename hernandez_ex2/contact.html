@@ -170,7 +170,7 @@
             position: relative;
             background: var(--hrec-primary-400);
             color: var(--hrec-primary-ink);
-            margin: auto;
+            margin: auto auto 0 auto;
             padding: 1.5rem 2rem;
             --heading-margin: 0;
         }
@@ -213,14 +213,27 @@
             transition: all var(--hrec-transition-time) ease;
         }
 
+        .hrec-button.is-outlined {
+            background: transparent;
+            color: var(--hrec-accent-400);
+            border-color: var(--hrec-accent-400);
+        }
+
         .hrec-button:hover {
             cursor: pointer;
             transform: translateY(-5px);
             box-shadow: 0 8px 5px var(--hrec-shadow-color);
         }
 
-        .hrec-button:active {
+        .hrec-button.is-outlined:hover {
+            background: var(--hrec-accent-400);
+            color: var(--hrec-accent-ink);
+        }
+
+        .hrec-button:active,
+        .hrec-button.is-outlined:active {
             background: var(--hrec-accent-600);
+            color: var(--hrec-accent-ink);
             border-color: var(--hrec-accent-600);
             transform: translateY(1px);
             box-shadow: 0 1px 1px var(--hrec-shadow-color);
@@ -232,10 +245,11 @@
         }
 
         .hrec-form-field {
+            width: 100%;
             display: flex;
             flex-flow: column nowrap;
             gap: 0.3rem;
-            margin: 0.5rem 0;
+            margin: 0 0 0.5rem 0;
         }
 
         .hrec-form-field__input {
@@ -257,6 +271,47 @@
             content: "*";
             margin-left: 0.3rem;
             color: var(--hrec-accent-300);
+        }
+
+        .hrec-tick-field {
+            width: 100%;
+        }
+
+        .hrec-tick-field > * + * {
+            margin-right: 0.5rem;
+        }
+
+        .hrec-tick-field__label {
+            margin: 0 0 0.5rem;
+        }
+
+        .hrec-tick-field__option {
+            display: inline-block;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0);
+            color: var(--hrec-primary-ink);
+            border: 1px solid var(--hrec-accent-400);
+            transition: all 0.2s var(--hrec-transition-time);
+        }
+
+        .hrec-tick-field__option:hover {
+            background: var(--hrec-accent-400);
+            cursor: pointer;
+        }
+
+        .hrec-tick-field__option *:hover {
+            cursor: pointer;
+        }
+
+        .hrec-field-set {
+            margin-bottom: 1rem;
+            padding: 1rem 1.5rem;
+            color: var(--hrec-accent-ink);
+            border: 1px solid var(--hrec-accent-400);
+        }
+
+        .hrec-field-set legend {
+            padding: 0 0.5rem;
         }
 
         @media (min-width: 520px) {
@@ -303,21 +358,161 @@
         <h2 class="hrec-title">Contact Us</h2>
         <p>Ready to purchase? Want to inquire for more details? Fill up the form below and talk to our excellent customer service center.</p>
         <form action="mailto:matthewhernandez@mymail.mapua.edu.ph">
-            <label class="hrec-form-field is-required">
-                <span class="hrec-form-field__label">Name</span>
-                <input class="hrec-form-field__input" type="text" name="name" placeholder="John Doe" required>
-            </label>
-            <label class="hrec-form-field is-required">
-                <span class="hrec-form-field__label">Email</span>
-                <input class="hrec-form-field__input" type="email" name="email" placeholder="john.doe@email.com" required>
-            </label>
+            <fieldset class="hrec-field-set">
+                <legend>Personal Info</legend>
+                <label class="hrec-form-field is-required">
+                    <span class="hrec-form-field__label">Name</span>
+                    <input class="hrec-form-field__input" type="text" name="name" placeholder="John Doe" required>
+                </label>
+                <div style="width: 100%; display: flex; flex-flow: row nowrap; gap: 0.5rem;">
+                    <label class="hrec-form-field is-required">
+                        <span class="hrec-form-field__label">Email</span>
+                        <input class="hrec-form-field__input" type="email" name="email" placeholder="john.doe@email.com" required>
+                    </label>
+                    <label class="hrec-form-field">
+                        <span class="hrec-form-field__label">Phone Number</span>
+                        <input class="hrec-form-field__input" type="text" name="phone" placeholder="+63 123 456 7890" required>
+                    </label>
+                </div>
+                <label class="hrec-form-field is-required">
+                    <span class="hrec-form-field__label">Address</span>
+                    <input class="hrec-form-field__input" type="text" name="address" placeholder="911 Magugunaw Bldg..." required>
+                </label>
+            </fieldset>
+            <fieldset class="hrec-field-set">
+                <legend>Nature of Inquiry</legend>
+                <div style="width: 100%; display: flex; flex-flow: row nowrap; gap: 0.5rem;">
+                    <label class="hrec-form-field is-required">
+                        <span class="hrec-form-field__label">Inquiry Type</span>
+                        <select name="inquiry-type" class="hrec-form-field__input">
+                            <option value="purchasing">Purchasing</option>
+                            <option value="leasing">Leasing</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="sponsorship">Sponsorship</option>
+                        </select>
+                    </label>
+                    <label class="hrec-form-field is-required">
+                        <span class="hrec-form-field__label">Nearest Branch</span>
+                        <select name="inquiry-type" class="hrec-form-field__input">
+                            <option value="mnl">Manila</option>
+                            <option value="mak">Makati</option>
+                            <option value="rzl">Rizal</option>
+                            <option value="bul">Bulacan</option>
+                            <option value="lgn">Laguna</option>
+                            <option value="btg">Batangas</option>
+                        </select>
+                    </label>
+                </div>
+                <div style="width: 100%; display: flex; flex-flow: row nowrap; gap: 0.5rem;">
+                    <div class="hrec-tick-field">
+                        <span class="hrec-tick-field__label" style="width: 100%; display: block;">Preferred Currency of Payment</span>
+                        <span class="hrec-tick-field__option">
+                            <input id="php" class="hrec-tick-field__input" type="radio" name="currency" value="php">
+                            <label for="php" class="hrec-tick-field__input-label">PHP</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="usd" class="hrec-tick-field__input" type="radio" name="currency" value="usd">
+                            <label for="usd" class="hrec-tick-field__input-label">USD</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="eur" class="hrec-tick-field__input" type="radio" name="currency" value="eur">
+                            <label for="eur" class="hrec-tick-field__input-label">EUR</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="gbp" class="hrec-tick-field__input" type="radio" name="currency" value="gbp">
+                            <label for="gbp" class="hrec-tick-field__input-label">GBP</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="jpy" class="hrec-tick-field__input" type="radio" name="currency" value="jpy">
+                            <label for="jpy" class="hrec-tick-field__input-label">JPY</label>
+                        </span>
+                    </div>
+                    <div class="hrec-tick-field">
+                        <span class="hrec-tick-field__label" style="width: 100%; display: block;">Items of inquiry</span>
+                            <span class="hrec-tick-field__option">
+                            <input id="mansion" class="hrec-tick-field__input" type="checkbox" name="currency" value="mansion">
+                            <label for="mansion" class="hrec-tick-field__input-label">Mansion</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="bungalow" class="hrec-tick-field__input" type="checkbox" name="currency" value="bungalow">
+                            <label for="bungalow" class="hrec-tick-field__input-label">Bungalow</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="condo" class="hrec-tick-field__input" type="checkbox" name="currency" value="condo">
+                            <label for="condo" class="hrec-tick-field__input-label">Condo</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="apartment" class="hrec-tick-field__input" type="checkbox" name="currency" value="apartment">
+                            <label for="apartment" class="hrec-tick-field__input-label">Apartment</label>
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="hrec-field-set">
+                <legend>Legal Documents</legend>
+                <div style="width: 100%; display: flex; flex-flow: row nowrap; gap: 0.5rem; margin-bottom: 1rem;">
+                    <label style="width: 100%;">
+                        <span class="hrec-tick-field__label" style="margin-bottom: 0.3rem; display: block;">Birth Certificate (PSA)</span>
+                        <input class="hrec-tick-field__option" style="width: 100%;" type="file" name="birthcert" />
+                    </label>
+                    <label class="hrec-form-field" style="width: 100%;">
+                        <span class="hrec-form-field__label">BIR TIN Number</span>
+                        <input class="hrec-form-field__input" type="text" name="tinnumero" placeholder="123456890" />
+                    </label>
+                </div>
+                <div style="width: 100%; display: flex; flex-flow: row nowrap; gap: 0.5rem;">
+                    <label style="width: 100%;">
+                        <span class="hrec-tick-field__label" style="margin-bottom: 0.3rem; display: block;">NBI Clearance</span>
+                        <input class="hrec-tick-field__option" style="width: 100%;" type="file" name="nbi" />
+                    </label>
+                    <label style="width: 100%;">
+                        <span class="hrec-tick-field__label" style="margin-bottom: 0.3rem; display: block;">Tax Declaration Form</span>
+                        <input class="hrec-tick-field__option" style="width: 100%;" type="file" name="taxdec" />
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset class="hrec-field-set">
+                <legend>Specifications</legend>
+                <label class="hrec-form-field">
+                    <span class="hrec-form-field__label">Do you have any specifics in mind?</span>
+                    <textarea class="hrec-form-field__input" rows="10" placeholder="You can describe it here... or upload it below" style="margin-bottom: 0.5rem" name="specifics"></textarea>
+                </label>
+                <div style="width: 100%; display: flex; flex-flow: row nowrap; gap: 0.5rem;">
+                    <label style="width: 100%;">
+                        <span class="hrec-tick-field__label" style="margin-bottom: 0.5rem; display: block;">File Upload</span>
+                        <input class="hrec-tick-field__option" style="width: 100%;" type="file" name="specifics" />
+                    </label>
+                    <div class="hrec-tick-field">
+                        <span class="hrec-tick-field__label" style="width: 100%; display: block;">File Type</span>
+                        <span class="hrec-tick-field__option">
+                            <input id="pdf" class="hrec-tick-field__input" type="radio" name="currency" value="pdf">
+                            <label for="pdf" class="hrec-tick-field__input-label">PDF</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="docx" class="hrec-tick-field__input" type="radio" name="currency" value="docx">
+                            <label for="docx" class="hrec-tick-field__input-label">DOCX</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="cad" class="hrec-tick-field__input" type="radio" name="currency" value="cad">
+                            <label for="cad" class="hrec-tick-field__input-label">CAD</label>
+                        </span>
+                        <span class="hrec-tick-field__option">
+                            <input id="sketchup" class="hrec-tick-field__input" type="radio" name="currency" value="sketchup">
+                            <label for="sketchup" class="hrec-tick-field__input-label">SKETCHUP</label>
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
             <label class="hrec-form-field is-required">
                 <span class="hrec-form-field__label">Message</span>
                 <textarea class="hrec-form-field__input" rows="10" placeholder="Hello! I'd like to inquire about..." required></textarea>
             </label>
-            <div style="display: flex; flex-flow: row nowrap; justify-content: flex-end; margin-top: 1.2rem">
+            <div style="display: flex; flex-flow: row nowrap; justify-content: flex-end; margin-top: 1.2rem; gap: 0.5rem">
                 <button class="hrec-button" type="submit">
                     <span class="hrec-button__label">Submit</span>
+                </button>
+                <button class="hrec-button is-outlined" type="reset">
+                    <span class="hrec-button__label">Reset Form</span>
                 </button>
             </div>
         </form>
