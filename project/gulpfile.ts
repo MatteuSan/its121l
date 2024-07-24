@@ -1,12 +1,15 @@
-const { src, dest, watch, series } = require('gulp');
+const {src, dest, series} = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 
-function sassTaskWebsite() {
-  return src('website/**/*.scss', { sourcemaps: true })
-    .pipe(sass().on('error', sass.logError))
-    .pipe(dest('./website', { sourcemaps: '.' }));
+function sassTaskProd() {
+  return src(['assets/scss/main.scss'], {sourcemaps: true})
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }).on('error', sass.logError))
+    .pipe(dest('./assets/css', {sourcemaps: '.'}));
 }
 
+
 exports.default = series(
-  sassTaskWebsite,
+  sassTaskProd,
 );

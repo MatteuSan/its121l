@@ -1,16 +1,23 @@
 {
   "name": "project",
-  "packageManager": "yarn@3.5.0",
+  "version": "1.0.0",
+  "description": "Bruh",
+  "main": "index.js",
   "scripts": {
-    "build:sass": "gulp --gulpfile=\"gulpfile.ts\""
+    "build": "gulp"
+  },
+  "author": "Matteu",
+  "license": "ISC",
+  "dependencies": {
+    "@matteusan/sentro": "^0.1.25",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.62.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "@matteusan/sentro": "0.1.25",
-    "gulp": "4.0.2",
-    "gulp-cli": "2.3.0",
-    "gulp-sass": "5.1.0",
-    "sass": "1.62.1",
-    "ts-node": "10.9.1",
-    "typescript": "5.0.4"
+    "@types/node": "^20.2.0"
   }
 }
