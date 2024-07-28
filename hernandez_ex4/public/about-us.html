@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ABOUT US - Better Components Inc.</title>
+
+  <link rel="stylesheet" href="main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<section>
+  <header class="bci-header">
+    <section>
+      <div>
+        <a href="./">
+          <img class="bci-header__logo" src="img/bci-header-logo.png" alt="BCI Logo." />
+        </a>
+      </div>
+      <nav class="bci-navbar">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li class="is-active"><a href="about-us.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <section class="bci-hero">
+    <div class="bci-hero__wrapper">
+      <h2 class="supertitle">ABOUT US</h2>
+      <p class="body">See what our <span class="highlighted">clients</span> say about us.</p>
+    </div>
+    <img src="" alt="" aria-hidden="true" />
+  </section>
+  <main class="content-wrap">
+    <section class="is-spaced" id="our-story">
+      <h2 class="supertitle">Our Story</h2>
+      <p>We are a professional audio and musical instruments dealer and distributor located in Mindanao. We specialize in the design, supply, and installation of audio, video, and lighting systems for entertainment, business, education, and government sectors.</p>
+    </section>
+
+    <section class="is-spaced" id="why-bci">
+      <h2 class="supertitle">Why BCI?</h2>
+      <p>Communication, sound technology, and music are three significant components of the digital age that sustain such rapid development. We have dedicated over the last years of our existence to studying every their applications in the community, according to people’s needs. And our efforts as global providers have revolved around one principle—giving you better.</p>
+
+      <p>Since its foundation in 1995, Better Components did not just merely follow along with the advancement of such technologies but blazed the trail by strategically providing its constantly growing market access to innovations in these fields. Thus, we have been privileged to become a major contributor of professional solutions for consumers in Mindanao, Visayas, and beyond, in their audio and music industry needs. In our mission to be global providers, we understand that we are not just selling products, looking for clients, and building our portfolios. Instead, we are set on making an impact with our service—by understanding every need, studying every option, and delivering a tailor-fit solution.</p>
+
+      <p>The decisions we make both big and small are guided by our desire to serve both our local and global community. This is how we are the sound system company that has done and will always do better for you.</p>
+    </section>
+
+    <section class="is-spaced" id="vision-mission">
+      <h2 class="supertitle">Vision</h2>
+      <p>Better Components Incorporated is a global
+        provider of music, communication,
+        and sound technology.</p>
+      <br>
+      <h2 class="supertitle">Mission</h2>
+      <p>Provide joy and happiness.
+        Make people sing, dance, and praise God.
+        Help others relax and destress.
+        Facilitate learning, development, and creation.</p>
+    </section>
+
+    <section class="is-spaced" id="map">
+      <h2 class="supertitle">Where we are</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15837.851379518419!2d125.6154675!3d7.0722129!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f96d9950c25c8d%3A0xdf6be5cdcce27f9c!2sBETTER%20COMPONENTS%20INC.!5e0!3m2!1sja!2sph!4v1721827003501!5m2!1sja!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </main>
+</section>
+<footer class="bci-footer">
+  <small class="small">Copyright © <span id="year">####</span> - Better Components Inc.</small>
+  <ul style="display: flex; flex-flow: row wrap; gap: 0.7rem">
+    <li><a href="https://www.facebook.com/officialbettercomponents/">Facebook</a></li>
+    <li><a href="https://instagram.com/bettercomponentsinc">Instagram</a></li>
+  </ul>
+</footer>
+<script type="text/javascript">
+  /**
+   * @type {Element}
+   */
+  const year = document.querySelector('#year');
+  year.textContent = new Date().getFullYear().toString();
+</script>
+</body>
+</html>

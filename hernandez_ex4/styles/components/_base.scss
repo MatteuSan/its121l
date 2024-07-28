@@ -1,0 +1,77 @@
+@use '@matteusan/sentro';
+
+:root {
+  @include sentro.token-config(
+    $primary: (
+      50: #e6f0ff,
+      100: #b3d1ff,
+      200: #80b3ff,
+      300: #4d94ff,
+      400: #021995,
+      600: #001b7b,
+      800: #00125e,
+      900: #000a41,
+      ink: #ffffff,
+    ),
+    $accent: (
+      50: #f9e6e6,
+      100: #ffbdbd,
+      200: #ff8b8b,
+      300: #ff4e4e,
+      400: #EF362E,
+      600: #be1911,
+      800: #a1110c,
+      900: #6b0600,
+      ink: #ffffff,
+    ),
+    $surface: (
+      default: #fff,
+      ink: #000a41
+    ),
+  );
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  --bci-transition-time: 0.2s;
+}
+
+@include sentro.breakpoint-config((
+  'sm': 320px,
+  'md': 640px,
+  'lg': 890px,
+  'xl': 1077px,
+));
+
+*,
+:before,
+:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100svh;
+  background: sentro.token-get('surface');
+  color: sentro.token-get('surface-ink');
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.content-wrap {
+  width: calc(100% - 50px);
+  max-width: 1077px;
+  margin: 0 auto;
+  padding: 5rem 0;
+}

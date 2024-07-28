@@ -1,0 +1,58 @@
+@use '@matteusan/sentro';
+
+.bci-header {
+  padding: 1rem 1.5rem;
+  background: sentro.token-get('primary-ink');
+  color: sentro.token-get('primary-400');
+  z-index: 100;
+
+  & > section {
+    width: calc(100% - 30px);
+    max-width: 1077px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: sentro.key-create('header-flow', column) nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.2rem;
+
+    @include sentro.breakpoint-create('lg') {
+      @include sentro.key-bind('header-flow', row);
+    }
+
+    .bci-header__logo {
+      width: 200px;
+      height: auto;
+    }
+
+    .bci-navbar {
+      ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem 1rem;
+        list-style: none;
+
+        li {
+          font-size: clamp(12px, 4vw, 16px);
+          text-align: center;
+          white-space: nowrap;
+
+          &.is-active {
+            font-weight: 700;
+            text-decoration: underline;
+          }
+
+          a {
+            transition: all var(--bci-transition-time) ease;
+
+            &:hover {
+              color: sentro.token-get('accent-400');
+            }
+          }
+        }
+      }
+    }
+  }
+}

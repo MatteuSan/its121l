@@ -1,0 +1,11 @@
+{
+  "name": "hernandez_ex4",
+  "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "build": "sass styles/main.scss:public/main.css --no-source-map --load-path=node_modules"
+  },
+  "dependencies": {
+    "@matteusan/sentro": "^1.1.0",
+    "sass": "1.77.6"
+  }
+}
