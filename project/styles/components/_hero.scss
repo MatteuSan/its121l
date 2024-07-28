@@ -1,0 +1,34 @@
+@use '@matteusan/sentro';
+
+.bci-hero {
+  width: 100%;
+  height: 55svh;
+  position: relative;
+  background: url("./img/bci-hero.png") sentro.token-get('primary-400') no-repeat center center/cover;
+  color: sentro.token-get('primary-ink');
+  padding: 0 30px;
+  gap: 1rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(#fff, 0.1);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+  }
+
+  .bci-hero__wrapper {
+    width: calc(100% - 60px);
+    max-width: 1077px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    gap: 0.7rem;
+    position: relative;
+    z-index: 2;
+  }
+}

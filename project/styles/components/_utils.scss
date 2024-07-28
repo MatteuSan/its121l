@@ -1,0 +1,60 @@
+@use '@matteusan/sentro';
+
+.supertitle {
+  font-size: clamp(#{sentro.to-rem(24px)}, 20vw, #{sentro.to-rem(48px)});
+  font-weight: 900;
+  line-height: clamp(1.25, 1, 1.75);
+}
+
+.body {
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.small {
+  font-size: clamp(10px, 4vw, 12px);
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.is-spaced:not(:last-child) {
+  margin-block-end: 2rem;
+}
+
+.highlighted {
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+  text-decoration: sentro.token-get('accent-400') underline;
+  text-decoration-thickness: 3px;
+  padding: 1px 3px;
+  transition: all var(--bci-transition-time) ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: sentro.token-get('primary-400');
+    transition: all var(--bci-transition-time) ease;
+    z-index: -1;
+
+    @include sentro.breakpoint-create('lg') {
+      width: 0;
+    }
+  }
+
+  @include sentro.breakpoint-create('lg') {
+    &:hover {
+      color: sentro.token-get('primary-ink', true);
+      cursor: default;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
