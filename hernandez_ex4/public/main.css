@@ -1,0 +1,392 @@
+﻿:root {
+  --bci-theme-primary-50: #e6f0ff;
+  --bci-theme-primary-100: #b3d1ff;
+  --bci-theme-primary-200: #80b3ff;
+  --bci-theme-primary-300: #4d94ff;
+  --bci-theme-primary-400: #021995;
+  --bci-theme-primary-600: #001b7b;
+  --bci-theme-primary-800: #00125e;
+  --bci-theme-primary-900: #000a41;
+  --bci-theme-primary-ink: #ffffff;
+  --bci-theme-accent-50: #f9e6e6;
+  --bci-theme-accent-100: #ffbdbd;
+  --bci-theme-accent-200: #ff8b8b;
+  --bci-theme-accent-300: #ff4e4e;
+  --bci-theme-accent-400: #EF362E;
+  --bci-theme-accent-600: #be1911;
+  --bci-theme-accent-800: #a1110c;
+  --bci-theme-accent-900: #6b0600;
+  --bci-theme-accent-ink: #ffffff;
+  --bci-theme-surface: #fff;
+  --bci-theme-surface-ink: #000a41;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  --bci-transition-time: 0.2s
+}
+
+*, :before, :after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  color: inherit
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box
+}
+
+body {
+  height: 100svh;
+  background: var(--bci-theme-surface);
+  color: var(--bci-theme-surface-ink);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between
+}
+
+.content-wrap {
+  width: calc(100% - 50px);
+  max-width: 1077px;
+  margin: 0 auto;
+  padding: 5rem 0
+}
+
+.supertitle {
+  font-size: clamp(1.5rem, 20vw, 3rem);
+  font-weight: 900;
+  line-height: 1.25
+}
+
+.body {
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 400;
+  line-height: 1.25
+}
+
+.small {
+  font-size: clamp(10px, 4vw, 12px);
+  font-weight: 300;
+  line-height: 1.25
+}
+
+.is-spaced:not(:last-child) {
+  margin-block-end: 2rem
+}
+
+.highlighted {
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+  text-decoration: var(--bci-theme-accent-400) underline;
+  text-decoration-thickness: 3px;
+  padding: 1px 3px;
+  transition: all var(--bci-transition-time) ease
+}
+
+.highlighted::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bci-theme-primary-400);
+  transition: all var(--bci-transition-time) ease;
+  z-index: -1
+}
+
+@media screen and (min-width: 890px) {
+  .highlighted::after {
+    width: 0
+  }
+}
+
+@media screen and (min-width: 890px) {
+  .highlighted:hover {
+    color: var(--bci-theme-primary-ink);
+    cursor: default
+  }
+
+  .highlighted:hover::after {
+    width: 100%
+  }
+}
+
+.bci-header {
+  padding: 1rem 1.5rem;
+  background: var(--bci-theme-primary-ink);
+  color: var(--bci-theme-primary-400);
+  z-index: 100
+}
+
+.bci-header > section {
+  width: calc(100% - 30px);
+  max-width: 1077px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: var(--bci-header-flow, column) nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem
+}
+
+@media screen and (min-width: 890px) {
+  .bci-header > section {
+    --bci-header-flow: row
+  }
+}
+
+.bci-header > section .bci-header__logo {
+  width: 200px;
+  height: auto
+}
+
+.bci-header > section .bci-navbar ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .3rem 1rem;
+  list-style: none
+}
+
+.bci-header > section .bci-navbar ul li {
+  font-size: clamp(12px, 4vw, 16px);
+  text-align: center;
+  white-space: nowrap
+}
+
+.bci-header > section .bci-navbar ul li.is-active {
+  font-weight: 700;
+  text-decoration: underline
+}
+
+.bci-header > section .bci-navbar ul li a {
+  transition: all var(--bci-transition-time) ease
+}
+
+.bci-header > section .bci-navbar ul li a:hover {
+  color: var(--bci-theme-accent-400)
+}
+
+.bci-hero {
+  width: 100%;
+  height: 55svh;
+  position: relative;
+  background: url("./img/bci-hero.png") var(--bci-theme-primary-400) no-repeat center center/cover;
+  color: var(--bci-theme-primary-ink);
+  padding: 0 30px;
+  gap: 1rem
+}
+
+.bci-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(8px);
+  z-index: 1
+}
+
+.bci-hero .bci-hero__wrapper {
+  width: calc(100% - 60px);
+  max-width: 1077px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+  gap: .7rem;
+  position: relative;
+  z-index: 2
+}
+
+.bci-button {
+  padding: .5rem 1rem;
+  border: 2px solid var(--bci-button-border, var(--bci-theme-accent-400));
+  background: var(--bci-button-fill, rgba(0, 0, 0, 0));
+  color: var(--bci-button-ink, var(--bci-theme-accent-400));
+  font-size: clamp(12px, 4vw, 16px);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all var(--bci-transition-time) ease;
+  cursor: pointer;
+  border-radius: .3rem
+}
+
+.bci-button .bci-button__label {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  pointer-events: none
+}
+
+.bci-button:hover, .bci-button:focus {
+  --bci-button-fill: var(--bci-theme-accent-400);
+  --bci-button-ink: var(--bci-theme-accent-ink)
+}
+
+.bci-button:active {
+  --bci-button-fill: var(--bci-theme-accent-200);
+  --bci-button-ink: var(--bci-theme-accent-ink);
+  --bci-button-border: var(--bci-theme-accent-200)
+}
+
+.bci-button.is-filled {
+  --bci-button-fill: var(--bci-theme-accent-400);
+  --bci-button-ink: var(--bci-theme-accent-ink)
+}
+
+.bci-button.is-filled:active {
+  --bci-button-fill: var(--bci-theme-accent-200);
+  --bci-button-ink: var(--bci-theme-accent-ink);
+  --bci-button-border: var(--bci-theme-accent-200)
+}
+
+.bci-button.is-fullwidth {
+  width: 100%;
+  display: inline-block
+}
+
+.bci-footer {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--bci-theme-primary-400);
+  color: var(--bci-theme-primary-ink);
+  text-align: center
+}
+
+.bci-footer ul {
+  list-style: none;
+  display: inline-block;
+  justify-content: center;
+  font-size: clamp(10px, 4vw, 12px)
+}
+
+.bci-footer ul li {
+  transition: all var(--bci-transition-time) ease
+}
+
+.bci-footer ul li:hover {
+  text-decoration: underline
+}
+
+.bci-carousel {
+  margin: 0 auto 1.5rem;
+  position: relative;
+  display: grid;
+  grid-template-columns:repeat(5, clamp(325px, 30vw, 344.64px));
+  grid-gap: 1rem;
+  grid-template-rows:none;
+  backdrop-filter: blur(8px);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none !important
+}
+
+.bci-carousel > * {
+  scroll-snap-align: center
+}
+
+.bci-carousel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0) !important
+}
+
+.bci-card {
+  position: relative
+}
+
+.bci-card .bci-card__media {
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-height: 320px;
+  overflow: hidden
+}
+
+.bci-card .bci-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center
+}
+
+.bci-card .bci-card__info {
+  display: var(--bci-card-info-display, flex);
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  gap: .7rem;
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .5);
+  color: var(--bci-theme-accent-ink);
+  padding: 1rem;
+  opacity: var(--bci-card-info-opacity, 0);
+  z-index: var(--bci-card-info-z, -1);
+  transition: all var(--bci-transition-time) ease
+}
+
+.bci-card:hover .bci-card__info {
+  --bci-card-info-opacity: 1;
+  --bci-card-info-z: 1
+}
+
+.bci-product__wrapper {
+  display: grid
+}
+
+@media screen and (min-width: 640px) {
+  .bci-product__wrapper {
+    grid-template-columns:1fr 2fr
+  }
+}
+
+.bci-product__media {
+  width: 100%;
+  overflow: hidden
+}
+
+.bci-product__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center
+}
+
+.bci-quote .bci-quote__headline {
+  font-size: clamp(1.5rem, 20vw, 3rem);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+  text-align: inherit
+}
+
+.bci-quote .bci-quote__author {
+  font-size: clamp(0.75rem, 20vw, 1rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--bci-theme-surface-ink);
+  margin: 1rem 0 0;
+  text-align: inherit
+}
+
+.bci-quote .bci-quote__author::before {
+  content: "— ";
+  color: var(--bci-theme-accent-400)
+}
+
+.bci-quote.is-from-right {
+  text-align: right
+}
+
+.bci-quote:not(:last-child) {
+  margin-block-end: 4rem
+}
