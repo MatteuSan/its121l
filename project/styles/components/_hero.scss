@@ -30,5 +30,9 @@
     gap: 0.7rem;
     position: relative;
     z-index: 2;
+
+    .supertitle, .title {
+      line-height: clamp(1.25, 1, 1.75) !important;
+    }
   }
 }
