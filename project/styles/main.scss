@@ -9,6 +9,9 @@
 @use 'components/hero';
 
 .bci-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.5rem 1rem;
   border: 2px solid sentro.key-create('button-border', 'accent-400');
   background: sentro.key-create('button-fill', rgba(0 0 0 / 0));
@@ -19,6 +22,25 @@
   transition: all var(--bci-transition-time) ease;
   cursor: pointer;
   border-radius: 0.3rem;
+
+  .bci-button__icon {
+    position: relative;
+    color: sentro.key-get('button-ink');
+    /* @fallback */
+    width: sentro.key-create('button-icon-size', 24px);
+    max-width: max-content;
+    height: sentro.key-create('button-icon-size', 24px);
+    transition: all var(--bci-transition-time) ease;
+
+    > * {
+      position: relative;
+      color: sentro.key-get('button-ink');
+      /* @fallback */
+      width: sentro.key-create('button-icon-size', 24px);
+      max-width: max-content;
+      height: sentro.key-create('button-icon-size', 24px);
+    }
+  }
 
   .bci-button__label {
     width: 100%;
@@ -101,6 +123,20 @@
   &::-webkit-scrollbar-track {
     background: rgba(0 0 0 / 0) !important;
   }
+
+  .brand {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-position: center;
+      object-fit: contain;
+    }
+  }
 }
 
 .bci-card {
@@ -164,8 +200,6 @@
 }
 
 .bci-quote {
-  //
-
   .bci-quote__headline {
     font-size: clamp(#{sentro.to-rem(24px)}, 20vw, #{sentro.to-rem(48px)});
     font-weight: 400;
@@ -194,5 +228,27 @@
 
   &:not(:last-child) {
     margin-block-end: 4rem;
+  }
+}
+
+.bci-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: sentro.token-get('surface');
+  box-shadow: 0 0 1rem rgba(0 0 0 / 0.1);
+  transition: all var(--bci-transition-time) ease;
+
+  &:hover {
+    box-shadow: 0 0 1rem rgba(0 0 0 / 0.2);
+  }
+}
+
+#vision-mission {
+  display: grid;
+  gap: 0.7rem;
+  margin: 5rem 0;
+
+  @include sentro.breakpoint-create('md') {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
