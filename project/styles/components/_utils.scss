@@ -38,6 +38,7 @@
   text-decoration-thickness: 3px;
   padding: 1px 3px;
   transition: all var(--bci-transition-time) ease;
+  color: sentro.token-get('primary-ink');
 
   &::after {
     content: "";
@@ -56,6 +57,8 @@
   }
 
   @include sentro.breakpoint-create('lg') {
+    color: inherit;
+
     &:hover {
       color: sentro.token-get('primary-ink', true);
       cursor: default;

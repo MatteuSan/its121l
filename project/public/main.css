@@ -98,6 +98,7 @@ body {
   text-decoration-thickness: 3px;
   padding: 1px 3px;
   transition: all var(--bci-transition-time) ease;
+  color: var(--bci-theme-primary-ink);
 }
 .highlighted::after {
   content: "";
@@ -116,6 +117,9 @@ body {
   }
 }
 @media screen and (min-width: 890px) {
+  .highlighted {
+    color: inherit;
+  }
   .highlighted:hover {
     color: var(--bci-theme-primary-ink);
     cursor: default;
