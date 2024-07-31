@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CART - Better Components Inc.</title>
+
+  <link rel="stylesheet" href="main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<section>
+  <header class="bci-header">
+    <section>
+      <div>
+        <a href="./">
+          <img class="bci-header__logo" src="img/bci-header-logo.png" alt="BCI Logo." />
+        </a>
+      </div>
+      <nav class="bci-navbar">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li aria-hidden="true">
+            <a href="./cart.html" class="bci-button">
+              <span class="bci-button__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <main class="content-wrap">
+    <section id="cart">
+      <h1 class="supertitle" style="text-align: center;">My Cart</h1>
+    </section>
+  </main>
+</section>
+<footer class="bci-footer">
+  <small class="small">Copyright © <span id="year">####</span> - Better Components Inc.</small>
+  <ul style="display: flex; flex-flow: row wrap; gap: 0.7rem">
+    <li><a href="https://www.facebook.com/officialbettercomponents/">Facebook</a></li>
+    <li><a href="https://instagram.com/bettercomponentsinc">Instagram</a></li>
+  </ul>
+</footer>
+<script type="text/javascript">
+  /**
+   * @type {Element}
+   */
+  const year = document.querySelector('#year');
+  year.textContent = new Date().getFullYear().toString();
+</script>
+</body>
+</html>
